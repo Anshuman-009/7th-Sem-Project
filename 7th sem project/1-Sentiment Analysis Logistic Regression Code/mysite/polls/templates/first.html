@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Show</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<center>
+<body style="background-color: #00DBDE;
+background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);">
+    <h1 style="color:white; font-size:4rem;text-shadow: 0 0 8px #ff5c33;">TEXT SENTIMENT <br> ANALYSIS<h1><br>
+<form method="post" action="{% url 'homepage' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div>
+        
+        <label style="color:#ffd6cc; text-shadow:0 0 3px #1a8cff">Write a Sentence</label><br>
+        <input name="text data" type="text" placeholder="Enter a sentence " style="width:30rem; margin-top:1rem; border:1px solid #ff4d4d" 
+        class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <br>
+    {% if result %}
+      <div class="alert alert-success alert-dismissible" style="width:300px">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h2 style="color:#000"> {{ result }} </h2>
+      </div>
+    {% endif %}
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-light Click-here" style="height:3rem; width:20rem; font-size:1.5rem; font-weight:bold;" name="pred_button" value="Save&Next" href="#popup1">ANALYZE</button>
+    </div>
+</form>
+
+</div>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Show</title>
+    <style>
+        body{
+            background-color:  lightblue;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        
+       form{
+        font-family:courier;
+        background-color: lightgoldenrodyellow;
+        height:300px;
+        width:600px;
+        border-radius:20px;
+       
+       }
+       input,button{
+        font-size:16px;
+        width:50%;
+        padding:15px 10px;
+        border:0;
+        outline:none;
+        border-radius:5px;
+       }
+      
+    </style>
+</head>
+<body>
+    <center>
+       
+
+<form method="post" action="{% url 'homepage' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default"><h2>Text Sentiment Show</h2></span>
+        <input name="text data" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <br>
+    <div class="col-auto">
+        <button type="submit" name="pred_button" value="Save&Next">Confirm Submission</button>
+    </div>
+    {% if result %}
+    <h2>The sentiment of the above sentence is: {{ result }}</h2>
+    {% endif %}
+</form>
+
+</center>
+
+</body>
+
+</html> {% endcomment %}
